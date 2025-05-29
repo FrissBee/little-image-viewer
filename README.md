@@ -88,6 +88,8 @@ The following attributes are available for the `<little-image-viewer></little-im
 - `title`
 - `sub-title`
 
+Examples:
+
 ```css
 little-image-viewer.viewer-style::part(container-viewer) {
   padding: 20px;
