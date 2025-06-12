@@ -28,7 +28,7 @@ The HTML or PHP file
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- 1. implement "little-image-viewer.js" file -->
-    <script src="./assets/js/little-image-viewer_v.1.1.0.js"></script>
+    <script src="./assets/js/little-image-viewer_v.1.2.0.js"></script>
     <!-- 2. implement own JS file -->
     <script src="./assets/js/my-script.js" defer></script>
   </head>
