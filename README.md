@@ -46,7 +46,7 @@ The own JS file
 ```js
 // the array with the image objects (structure is important)
 // If an empty string is passed to the key `title` or `subtitle`, no title or subtitle is displayed.
-// Important: All images should have the same width and height in pixels
+// All images should have the same width and height in pixels
 const images = [
   { src: './path-to-the-image-file/little-image-viewer-01.jpg', alt: 'image alt text', title: '', subTitle: '' },
   { src: './path-to-the-image-file/little-image-viewer-02.jpg', alt: 'image alt text', title: '', subTitle: '' },
@@ -62,22 +62,54 @@ littleImageViewer.setImages(images);
 
 ## Functions
 
-- `setImages(images)` => to pass the array with the image objects
+The following function is required for implementation in your own website:
+
+- `setImages(images)`
+
+to pass the array with the image objects
+
+If you want to integrate the small image viewer into your own project, the following functions are also available:
+
+- `getAnimationNames()` => returns an array of all animations (the possible values for the attribute `is-animation`)
+- `getImageList()` => The array with the image objects is returned.
+- `setImageListLength(imageListLength)` => The length (number) of image objects can be set.
+- `setImageContainerSize()` => In some cases, the width of the displayed image must be adjusted to the width of the outer container if it changes the screen or window size. You can do this with this function.
 
 ## Attributes
 
 The following attributes are available for the `<little-image-viewer></little-image-viewer>` HTML tag:
 
-- `slide-time` => time for the animation in milliseconds (ms). Default is `1000`. Example: `<little-image-viewer slide-time="500"></little-image-viewer>`
-- `icon-color` => for setting the color of the icons. Example: `<little-image-viewer icon-color="#3191d6"></little-image-viewer>`
-- `is-animation` => for animation. Example: `<little-image-viewer is-animation="slide-h-endless"></little-image-viewer>`. Possible values:
+- `slide-time` => time for the animation in milliseconds (ms). Default is `1000`. **Example:** `<little-image-viewer slide-time="500"></little-image-viewer>`
+- `icon-color` => for setting the color of the icons. **Example:** `<little-image-viewer icon-color="#3191d6"></little-image-viewer>`
+- `is-animation` => for animation. **Example:** `<little-image-viewer is-animation="slide-h-endless"></little-image-viewer>`.
+
+  **Possible values:**
+
   - `slide-h-to-start`
   - `slide-h-stop-end`
   - `slide-h-endless`
 
+## Properties
+
+Not necessary for implementation in your own page, but if you want to integrate the little image viewer into a project, there is the following property:
+
+- `defaultImageList` => A list with three placeholder images. It is transferred to the little image viewer at the start of loading.
+
+The list looks as follows:
+
+```js
+defaultImageList = [
+  { src: 'https://placehold.co/800x470/454545/FFF?text=Placeholder+Image 1', alt: '', title: '', subTitle: '' },
+  { src: 'https://placehold.co/800x470/3982b3/FFF?text=Placeholder+Image 2', alt: '', title: '', subTitle: '' },
+  { src: 'https://placehold.co/800x470/279925/FFF?text=Placeholder+Image 3', alt: '', title: '', subTitle: '' },
+];
+```
+
 ## CSS
 
-### parts:
+#### parts:
+
+The following parts can be used to style the little image viewer:
 
 - `container-viewer`
 - `image`
@@ -88,7 +120,7 @@ The following attributes are available for the `<little-image-viewer></little-im
 - `title`
 - `sub-title`
 
-Examples:
+Example:
 
 ```css
 little-image-viewer.viewer-style::part(container-viewer) {
